@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ADHelper.cs" />
+    <Compile Include="FrmPage1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPage1.Designer.cs">
+      <DependentUpon>FrmPage1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     <Compile Include="UserDataTable.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="FrmPage1.resx">
+      <DependentUpon>FrmPage1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
