@@ -14,16 +14,11 @@ namespace ADUserTransfer
 {
     public partial class FrmPage1 : Form
     {
-        private List<DirectoryEntry> userEntries = new List<DirectoryEntry>();
-        private List<string> userCommonNames = new List<string>();
-        public FrmPage1()
+        Main main;
+        public FrmPage1(Main main)
         {
             InitializeComponent();
-        }
-
-        private void FrmPage1_Load(object sender, EventArgs e)
-        {
-            this.lbUserCommonName.DataSource = this.userCommonNames;
+            this.main = main;
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -31,9 +26,19 @@ namespace ADUserTransfer
             string str = Interaction.InputBox("请输入用户的公共名称：", "提示", "", -1, -1);
             if (str != null && str != "")
             {
-                if (this.userCommonNames.Contains(str)) MessageBox.Show("用户公共名称重复！");
-                else this.userCommonNames.Add(str);
+                if (this.lbUserCommonName.Items.Contains(str)) MessageBox.Show("用户公共名称重复！");
+                else this.lbUserCommonName.Items.Add(str);
             }
+        }
+
+        private void FrmPage1_Load(object sender, EventArgs e)
+        {
+            this.cmbOrgUnitEntry.DataSource = main.OrgUnitEntries;
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

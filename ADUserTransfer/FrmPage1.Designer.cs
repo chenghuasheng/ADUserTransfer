@@ -77,6 +77,7 @@
             this.btnRemove.TabIndex = 3;
             this.btnRemove.Text = "删除";
             this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // cmbOrgUnitEntry
             // 
@@ -127,6 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 331);
+            this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label2);
@@ -136,8 +138,10 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbUserCommonName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmPage1";
-            this.Text = "FrmPage1";
             this.Load += new System.EventHandler(this.FrmPage1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserResult)).EndInit();
             this.ResumeLayout(false);
