@@ -34,6 +34,8 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.cmbOrgUnitEntry = new System.Windows.Forms.ComboBox();
             this.dgvUserResult = new System.Windows.Forms.DataGridView();
+            this.CommonName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ResultDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,11 +92,28 @@
             // dgvUserResult
             // 
             this.dgvUserResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CommonName,
+            this.ResultDetail});
             this.dgvUserResult.Location = new System.Drawing.Point(269, 74);
             this.dgvUserResult.Name = "dgvUserResult";
+            this.dgvUserResult.RowHeadersVisible = false;
             this.dgvUserResult.RowTemplate.Height = 23;
             this.dgvUserResult.Size = new System.Drawing.Size(343, 240);
             this.dgvUserResult.TabIndex = 5;
+            // 
+            // CommonName
+            // 
+            this.CommonName.DataPropertyName = "CommonName";
+            this.CommonName.HeaderText = "公共名称";
+            this.CommonName.Name = "CommonName";
+            // 
+            // ResultDetail
+            // 
+            this.ResultDetail.DataPropertyName = "ResultDetail";
+            this.ResultDetail.HeaderText = "详细结果";
+            this.ResultDetail.Name = "ResultDetail";
+            this.ResultDetail.Width = 240;
             // 
             // label2
             // 
@@ -113,6 +132,7 @@
             this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "搜索";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // label3
             // 
@@ -127,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 331);
+            this.ClientSize = new System.Drawing.Size(624, 330);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSearch);
@@ -160,5 +180,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CommonName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ResultDetail;
     }
 }

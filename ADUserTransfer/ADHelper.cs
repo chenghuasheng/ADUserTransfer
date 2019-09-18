@@ -17,7 +17,7 @@ namespace ADUserTransfer
         ///
         ///域名
         ///
-        private static string DomainName = "192.168.3.88";//在有可解析的域名的情况下，请写域名，否则请填写IP地址
+        private static string DomainName = "10.8.3.249";//在有可解析的域名的情况下，请写域名，否则请填写IP地址
         /// LDAP绑定路径
         ///
         private static string ADPath = "LDAP://" + DomainName;
