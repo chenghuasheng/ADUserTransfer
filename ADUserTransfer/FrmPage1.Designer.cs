@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +144,23 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "用户搜索结果：";
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(153, 225);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(84, 23);
+            this.btnImport.TabIndex = 9;
+            this.btnImport.Text = "从Excel导入";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.BtnImport_Click);
+            // 
             // FrmPage1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 330);
             this.ControlBox = false;
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label2);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn CommonName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ResultDetail;
+        private System.Windows.Forms.Button btnImport;
     }
 }

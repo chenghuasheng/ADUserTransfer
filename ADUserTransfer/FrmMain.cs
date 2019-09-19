@@ -48,6 +48,10 @@ namespace ADUserTransfer
             this.SetButtonState();
             try
             {
+                ADHelper.DomainName = Properties.Settings.Default.DomainName;
+                ADHelper.ADUser = Properties.Settings.Default.ADUser;
+                ADHelper.ADPassword = Properties.Settings.Default.ADPassword;
+
                 DirectoryEntry entry = ADHelper.Instance.DomainRootEntry;
                 Console.WriteLine("成功连接到 {0}",entry.Properties["distinguishedName"].Value);
                 page1.Show();
@@ -86,6 +90,11 @@ namespace ADUserTransfer
             else this.btnPrev.Enabled = true;
             if (this.formIndex >= this.forms.Count - 1) this.btnNext.Enabled = false;
             else this.btnNext.Enabled = true;
+        }
+
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.DirectoryServices;
 using Microsoft.VisualBasic;
+using System.Data.OleDb;
 
 
 namespace ADUserTransfer
@@ -72,6 +73,35 @@ namespace ADUserTransfer
                 userTable.Rows.Add(dataRow);
             }
             this.dgvUserResult.DataSource = userTable;
+        }
+
+        private void BtnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Excel文件|*.xls;*.xlsx";
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string connstr2007 = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + openFile.FileName + ";Extended Properties=\"Excel 12.0;HDR=YES\"";
+                    OleDbConnection conn;
+                    conn = new OleDbConnection(connstr2007);
+                    conn.Open();
+                    string sql = "select * from [Sheet1$]";
+                    OleDbCommand cmd = new OleDbCommand(sql, conn);
+
+                    OleDbDataReader sdr = cmd.ExecuteReader();
+                    this.lbUserCommonName.Items.Clear();
+                    
+                    while (sdr.Read())
+                    {
+                        this.lbUserCommonName.Items.Add(sdr.GetValue(0).ToString());
+                    }
+                }catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
     }
 }

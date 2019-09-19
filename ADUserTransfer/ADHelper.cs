@@ -17,18 +17,18 @@ namespace ADUserTransfer
         ///
         ///域名
         ///
-        private static string DomainName = "10.8.3.249";//在有可解析的域名的情况下，请写域名，否则请填写IP地址
+        public static string DomainName = "10.8.3.249";//在有可解析的域名的情况下，请写域名，否则请填写IP地址
         /// LDAP绑定路径
         ///
         private static string ADPath = "LDAP://" + DomainName;
         ///
         ///登录帐号
         ///
-        private static string ADUser = "administrator"; //administrator
+        public static string ADUser = "administrator"; //administrator
         ///
         ///登录密码
         ///
-        private static string ADPassword = "11235813@a";
+        public static string ADPassword = "12345678";
 
         private DirectoryEntry rootEntry = null;
         public DirectoryEntry DomainRootEntry
